@@ -38,42 +38,5 @@ namespace CodeGeneration
                 return "";
             }
         }
-    }
-
-
-    interface Eater<T>
-    {
-        void Eat(T x);
-    }
-
-    public abstract class Foo<T> : IEnumerable<T>, Eater<T> where T : Foo<T>
-    {
-        public abstract IEnumerator<T> GetEnumerator();
-        public abstract void Eat(T x);
-        
-        System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
-        {
-            return GetEnumerator();
-        }       
-    }
-
-    public class Bar : Foo<Bar>
-    {
-
-        void foo()
-        {
-            
-        }
-        
-        
-        public override IEnumerator<Bar> GetEnumerator()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void Eat(Bar x)
-        {
-            
-        }
-    }
+    }    
 }
